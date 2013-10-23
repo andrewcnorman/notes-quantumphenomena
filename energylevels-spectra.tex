@@ -1,0 +1,48 @@
+
+\section{Energy levels and photon emission}
+
+The energy of an electron which is confined in an atom can have only certain values, called the \emph{energy levels} of the atom.  The energy levels of an atom of a particular element are different from those of all other elements, and are the same for any atom of that element.
+
+The following diagram represents the energy levels of a hydrogen atom.  Hydrogen's only electron is normally in the lowest energy level, which has an energy of \SI{-13.6}{eV},\footnote{The energy levels are defined with reference to an electron which is free from the influence of the nucleus (i.e.\ it has been ionized), which is taken as having zero energy.  This is why all of the energy levels have negative energy.} and when it is there the atom is said to be in its \emph{ground state}.
+
+If a hydrogen atom absorbs energy in some way (for example by being hit by an electron or a photon), its electron may be promoted to one of the higher energy levels.  The atom is now unstable---the electron could randomly fall back down to the lowest level at any time---and is in what is called an \emph{excited state}.  \emph{Deexcitation} is the name given to the process whereby the atom returns to its ground state again, and the energy that the electron has loses in returning to this lower energy state is emitted as light (in fact as a single photon of exactly the right frequency to have this energy).
+
+\begin{figure}
+  \begin{tikzpicture}[scale=0.6]
+    %\draw (0,0) -- (6,0);
+    \newcounter{j}
+    \foreach \i in {1,2,...,4}{
+      \draw  (0,-13.6/\i/\i)node[left] {\footnotesize$n=\i$} -- (10,-13.6/\i/\i);  
+    }
+    \foreach \i in {5,6,...,99}{
+      \draw  (0,-13.6/\i/\i) -- (10,-13.6/\i/\i);
+    }
+ \draw (10,-13.6)node[right]{\footnotesize$-13.6$}
+  (10,-13.6/4)node[right]{\footnotesize$-3.40$}
+  (10,-13.6/9)node[right]{\footnotesize$-1.51$}
+  (10,-13.6/16)node[right]{\footnotesize$-0.85$};
+    \draw  (0,-13.6/10000)node[left] {\footnotesize$n=\infty$} -- (10,-13.6/10000)node[right]{\footnotesize zero};
+  \draw[>=stealth,->] (12,-11)--node[right]{Energy in \si{eV}}(12,-5);
+  \draw[->] (14,-13.6) node[right]{ground state}--(12,-13.6);
+    \draw[->] (14,-13.6/9) node[right]{an excited state}--(12,-13.6/9);
+    \draw[->] (14,-13.6/10000) node[right]{free electron (ionized)}--(12,-13.6/10000);
+  \end{tikzpicture}
+\end{figure}
+
+\label{photon-emission}
+
+Let us imagine that an electron in a hydrogen atom has somehow been excited into the $n=4$ energy level.  After a short time, it will return to the $n=1$ energy level, but it has four possible routes to this ground state:
+\[n=4 \;\longrightarrow\; n=3 \; \;\longrightarrow\; n=2 \;\longrightarrow\; n=1,\]
+\[n=4 \;\longrightarrow\; n=3 \;\longrightarrow\; n=1,\]
+\[n=4 \;\longrightarrow\; n=2 \;\longrightarrow\; n=1,\]
+\[n=4 \;\longrightarrow\; n=1.\]
+
+This actually involves six different transitions: $n=4\rightarrow3$,$4\rightarrow2$,$4\rightarrow1$,$3\rightarrow2$,$3\rightarrow1$,$2\rightarrow1$, each of which will involve the emission of a photon whose frequency depends on the difference in energy between the levels involved.  When an electron moves from a level with energy $E_{2}$ to one of lower energy $E_{1}$, the frequency $f$ of the emitted photon is given by the difference in energies:
+\[hf=E_{1}-E_{2}.\]
+
+\begin{marginfigure}
+\includegraphics[width=\textwidth]{img/neon.jpg}
+\caption{Part of the line spectrum of neon, created using a low pressure glass discharge tube and viewed via a diffraction grating spectrometer at Bishop Heber High School.}
+\end{marginfigure}
+
+Where there are lots of atoms, all possible transitions can be expected to occur in even a very short time interval, and photons of many different specific frequencies are emitted.  The line spectrum of hydrogen is thus composed of light of the frequencies of all the transitions above (and many more besides).  This is why discharge tubes, in which electricity is passed through a low pressure gas allowing electrons to excite atoms in the gas, are seen to glow with a colour distinctive colour depending on the gas inside, and the lines in the spectrum---corresponding to the transitions between atomic energy levels---are characteristic of the element.  This is how we can know the composition of far-off stars and planets.\footnote{Though in these cases it is usually by absorption spectra, i.e.\ dark lines in a continuous spectrum which correspond to the positions of the spectral lines of the excited elements.}

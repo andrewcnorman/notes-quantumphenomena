@@ -1,0 +1,64 @@
+\section{The photoelectric effect}
+
+Sometimes, visible or ultra-violet light falling on a metal surface can cause electrons to be emitted from the metal.  For most metals, ultra-violet light is needed, but some metals will exhibit this phenomenon with visible light, e.g.\ sodium will emit electons with green light\footnote{This works with visible light for the other alkali metals too, and there are even semi-conductors with special coatings that will emit electrons all the way through the visible spectrum and into the infra-red.}.  This phenomenon is known as the \emph{photoelectric effect}.
+
+Metals have high electrical conductivity, and usually one or two electrons per atom are free to move about, termed the `conduction electrons'. We can grasp how metals are bonded together by thinking of a regular structure of positive ions with the conduction electrons moving about in between, creating a more-or-less uniform sea of negative charge which glues the structure together.  Light cannot turn into electrons (charge must be conserved!) so the light must be giving electrons in the metal enough energy to escape from the electrostatic attraction of the metal nuclei.
+
+%diagram
+\begin{center}
+\begin{tikzpicture}[
+lightray/.style={thick,>=stealth,->,decorate, decoration={snake,post length=3mm,amplitude=2mm,segment length=4mm}}]
+% interface
+\fill[fill=gray,opacity=0.6] (-0.3,0)--(4.3,0)--(4.3,-1.7)--(-0.3,-1.7)--(-0.3,0);
+\begin{scope}[transparency group]
+        % Left edge
+        \fill[path fading=east, color=white] (-0.3,-1.7) rectangle (0,0);
+        % Bottom edge
+        \fill[path fading=north, color=white] (-0.3,-1.7) rectangle (4.3,-1.5);
+        % Right edge
+        \fill[path fading=west, color=white] (4.0,-1.7) rectangle (4.3,0);
+    \end{scope}
+\draw[line width=1pt] (-0.3,0)-- (4.3,0)node[anchor=north west]{polished metal surface};
+% +ve ions
+\foreach \i in {0.2,0.8,...,4.0}{
+\draw[fill=white] (\i,-0.3) node{\footnotesize $+$} circle (0.2);
+\draw[fill=white] (\i+0.3,-0.8196) node{\footnotesize $+$} circle (0.2);
+\draw[fill=white] (\i,-1.34) node{\footnotesize $+$} circle (0.2);
+}
+\draw[fill=white] (-0.1,-0.82) node{\footnotesize $+$} circle (0.2);
+% -ve charges in cloud NB important to have same number of + and -
+\foreach \j in {0.2,0.8,...,3.8}{
+\node at (\j+0.3,-0.473) {\tiny $-$};
+\node at (\j,-0.9928) {\tiny $-$};
+\node at (\j+0.3,-1.5124) {\tiny $-$};
+}
+\node at (4.1,-0.473) {\tiny $-$};
+\node at (-0.1,-0.473) {\tiny $-$};
+\node at (3.8,-0.9928) {\tiny $-$};
+%light rays
+\draw[lightray] (0,1.3)node[left]{incident light}--(2,0);
+\draw[>=stealth,->] (2,0)--(2.3,1.3)node[right]{photoelectrons}node[anchor=south]{$\mathrm{e}^{-}$};
+\end{tikzpicture}
+\end{center}
+
+
+The classical picture of light as a wave would explain the photoelectric emission of electrons as a result of the electrons gaining enough energy to escape the metal surface from being shaken about by the light wave tossing it around (like a boat on the sea).\footnote{The `water' here is the electric and magnetic fields---an electromagnetic wave is a disturbance in these fields---and the electron is `tossed about' because it feels a changing force as these fields change, due to its charge.}  As the light is made brighter, these disturbances are greater, since the light has greater intensity and therefore the wave has a bigger amplitude.
+
+However, Einstein realized in 1905 that this picture could not fully explain the experimental observations of the photoelectric effect.  In particular:
+\begin{itemize}
+\item as the light intensity is turned down, there is no threshold intensity below which no electrons are emitted: they continue being emitted (albeit less often) no matter how dim the light is, and indeed some may be emitted \emph{as soon as the light is turned on}!
+\item as the light intensity is increased, the electrons which are emitted do not get more energetic.  There are more of them, but their (kinetic) energy remains the same.
+\item if the frequency of the light is changed, there is a certain frequency below which no electrons will be emitted \emph{no matter how intense the light is made}.
+\end{itemize}
+
+This led Einstein to relate these results to Planck's hypothesis that matter can only accept or emit radiation energy in small packets \emph{quanta} of a definite size related to the frequency of the light by $E=hf$, where $E$ is the energy of the quantum, $f$ is the frequency of the light radiation and $h$ is a constant of proportionality known as \emph{Planck's constant},\footnote{Named after Max Planck (1858-1947), who resolved the `ultraviolet catastophe' of the experimental observations of black body radiation, and thus originated quantum theory.} equal to \SI{6.64e-34}{J.s}. He furthermore postulated that light comprises a finite number of individual packets of energy (which we now call \emph{photons}) which carry an energy $hf$ and transfer all their energy to the photoelectrons during a collision.\footnote{Einstein got a Nobel prize in 1921 ``for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect''.}
+
+The photoelectrons emitted from the metal surface need a certain minimum energy to escape from the metal, known as the \emph{work function} $\phi$, so the minimum or threshold frequency $f_{0}$ of photon that can give rise to photoelectrons must have this energy $hf_{0}=\phi$.
+
+The kinetic energy $\frac{1}{2}m_{\mathrm{e}}v^2$ of a photoelectron leaving the metal surface also comes from the energy given to it by the photon that it absorbed: any extra energy above the minimum required that the incoming photon has---once the energy of the work function has been used to escape from the metal---goes into the photoelecton's kinetic energy:
+
+\[\frac{1}{2}m_{\mathrm{e}}v^2=hf-\phi.\]
+
+%EXAMPLES OF EQUATION??
+
+In this way, Einstein was able to explain all of the experimental results in a simple theory, and his equation for the kinetic energy above was verified experimentally in 1912,\footnote{Following the publication for an accurate value for the mass of the electron produced by using Millikan's oil drop experiment and earlier measurements of the electron specific charge.} but one which was at odds with the many other extremely wide ranging experiments which had lead scientists to the conclusion that light is a form of wave motion.  This idea therefore had been overturned---there is no way to explain the experimental facts using it---and the decades that followed rewrote the whole of physics, in what became known as `the quantum revolution'.
